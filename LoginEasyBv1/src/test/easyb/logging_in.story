@@ -1,3 +1,5 @@
+#!groovy
+
 import ohtu.*
 import ohtu.services.*
 import ohtu.data_access.*
