@@ -1,15 +1,17 @@
 package ohtu.services;
 
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import ohtu.domain.User;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 import ohtu.data_access.UserDao;
 
+@Component
 public class AuthenticationService {
 
-    private UserDao userDao;
+    private final UserDao userDao;
 
+    @Autowired
     public AuthenticationService(UserDao userDao) {
         this.userDao = userDao;
     }
@@ -45,6 +47,6 @@ public class AuthenticationService {
         }else if(password.length() < 8 || (!password.matches(".*([0-9]|//W).*"))){
             return true;
         }
-        return false;
+        return false;                                                  
     }
 }
