@@ -11,47 +11,48 @@ public class Tester {
 
         driver.get("http://localhost:8090");
         System.out.println( driver.getPageSource() );
-        /*testing new user login*/
         
-        WebElement element = driver.findElement(By.linkText("register new user"));       
+        WebElement element = driver.findElement(By.linkText("login"));       
         element.click(); 
         
         System.out.println("==");
+        
         System.out.println( driver.getPageSource() );
         element = driver.findElement(By.name("username"));
-        element.sendKeys("evgenia");
+        /*testing wrong login name*/
+        //element.sendKeys("jenni");
+        element.sendKeys("pekka");
         element = driver.findElement(By.name("password"));
-        element.sendKeys("jennintesti1");
-        element = driver.findElement(By.name("passwordConfirmation"));
-        element.sendKeys("jennintesti1");
-        element = driver.findElement(By.name("add"));
+        element.sendKeys("akkep");
+        /*testing wrong password*/
+        //element.sendKeys("pekka");
+        element = driver.findElement(By.name("login"));
         element.submit();
+        
         System.out.println("==");
         System.out.println( driver.getPageSource() );
-        element = driver.findElement(By.linkText("continue to application mainpage"));
-        element.click(); 
-        element = driver.findElement(By.linkText("logout"));
-        element.click();
-        
-//        WebElement element = driver.findElement(By.linkText("login"));       
+                
+        /*testing new user login*/
+//        WebElement element = driver.findElement(By.linkText("register new user"));       
 //        element.click(); 
 //        
 //        System.out.println("==");
-//        
 //        System.out.println( driver.getPageSource() );
 //        element = driver.findElement(By.name("username"));
-//        /*testing wrong login name*/
-//        //element.sendKeys("jenni");
-//        element.sendKeys("pekka");
+//        element.sendKeys("evgenia");
 //        element = driver.findElement(By.name("password"));
-//        element.sendKeys("akkep");
-//        /*testing wrong password*/
-//        //element.sendKeys("pekka");
-//        element = driver.findElement(By.name("login"));
+//        element.sendKeys("jennintesti1");
+//        element = driver.findElement(By.name("passwordConfirmation"));
+//        element.sendKeys("jennintesti1");
+//        element = driver.findElement(By.name("add"));
 //        element.submit();
-//        
 //        System.out.println("==");
 //        System.out.println( driver.getPageSource() );
-//        
+        
+        /*testing logout after user creation*/
+//        element = driver.findElement(By.linkText("continue to application mainpage"));
+//        element.click(); 
+//        element = driver.findElement(By.linkText("logout"));
+//        element.click();
     }
 }
