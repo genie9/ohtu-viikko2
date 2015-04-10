@@ -44,7 +44,4 @@ public class UserCreation {
     public String toString() {
         return username + " "+password+ " "+passwordConfirmation;
     }
-
-    
-    
 }

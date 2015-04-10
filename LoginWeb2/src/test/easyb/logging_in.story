@@ -59,7 +59,7 @@ scenario "nonexistent user can not login to system", {
 
     when 'a nonexistent username and some password are given', {
         element = driver.findElement(By.name("username"));
-        element.sendKeys("evgenia");
+        element.sendKeys("pupu");
         element = driver.findElement(By.name("password"));
         element.sendKeys("jennintesti1");
         element = driver.findElement(By.name("login"));
