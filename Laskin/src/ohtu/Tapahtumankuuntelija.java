@@ -28,17 +28,16 @@ public class Tapahtumankuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         Komento komento = komennot.get(ae.getSource());
+        
         if  (komento!=null) {
             komento.suorita();
             edellinen = komento;
         } else {
             // toiminto oli undo
             edellinen.peru();
-            edellinen = null;
         }
 
         nollaa.setEnabled(sovellus.tulos()!=0);
-        undo.setEnabled(edellinen!=null);
+        undo.setEnabled(edellinen.isNotEmpty());
     }
-
 }

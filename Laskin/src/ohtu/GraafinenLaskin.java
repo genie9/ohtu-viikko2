@@ -55,5 +55,4 @@ public class GraafinenLaskin implements Runnable {
         paneli.add(undo);
         container.add(paneli);
     }
- 
 }
