@@ -43,7 +43,7 @@ public class TennisGame {
     public String getScore() {
         String score = "";
         if (m_score1 == m_score2) {
-            score = even(m_score1);//
+            score = even(m_score1);
         } else if (m_score1 >= 4 || m_score2 >= 4) {
             score = advantageOrWin(m_score1, m_score2);
         } else {
