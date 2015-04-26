@@ -4,7 +4,7 @@ import statistics.Player;
 
 public class And implements Matcher {
 
-    private Matcher[] matchers;
+    private final Matcher[] matchers;
 
     public And(Matcher... matchers) {
         this.matchers = matchers;

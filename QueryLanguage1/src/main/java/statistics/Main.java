@@ -11,6 +11,11 @@ public class Main {
                              new PlaysIn("PHI")
         );
         
+        m = new Or( new HasAtLeast(10, "goals"),
+                             new HasFewerThan(30, "assists"),
+                             new PlaysIn("PHI")
+        );
+        
         for (Player player : stats.matches(m)) {
             System.out.println( player );
         }
