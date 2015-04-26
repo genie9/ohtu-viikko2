@@ -7,7 +7,7 @@ public class Main {
         Statistics stats = new Statistics(new PlayerReaderImpl("http://nhlstats-2013-14.herokuapp.com/players.txt"));
           
         Matcher m = new And( new HasAtLeast(10, "goals"),
-                             new HasAtLeast(10, "assists"),
+                             new HasFewerThan(30, "assists"),
                              new PlaysIn("PHI")
         );
         
