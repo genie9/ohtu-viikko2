@@ -31,5 +31,13 @@ public class Main {
         for (Player player : stats.matches(m)) {
             System.out.println(player);
         }
+
+        KyselyRakentaja kr = new KyselyRakentaja();
+        m = kr.and(new HasAtLeast(30, "goals"), new HasFewerThan(5, "assists")).or(new HasAtLeast(30, "goals"), new HasFewerThan(5, "assists"));
+
+        for (Player player : stats.matches(m)) {
+            System.out.println(player);
+        }
     }
+
 }
