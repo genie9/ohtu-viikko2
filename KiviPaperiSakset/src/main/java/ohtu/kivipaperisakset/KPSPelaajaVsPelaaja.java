@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class KPSPelaajaVsPelaaja {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    protected static final Scanner scanner = new Scanner(System.in);
+    protected static final Tuomari tuomari = new Tuomari();
 
     public void pelaa() {
-        Tuomari tuomari = new Tuomari();
-
         System.out.print("Ensimmäisen pelaajan siirto: ");
         String ekanSiirto = scanner.nextLine();
         System.out.print("Toisen pelaajan siirto: ");
@@ -21,7 +20,6 @@ public class KPSPelaajaVsPelaaja {
 
             System.out.print("Ensimmäisen pelaajan siirto: ");
             ekanSiirto = scanner.nextLine();
-            
             System.out.print("Toisen pelaajan siirto: ");
             tokanSiirto = scanner.nextLine();
         }
@@ -31,7 +29,7 @@ public class KPSPelaajaVsPelaaja {
         System.out.println(tuomari);
     }
 
-    private static boolean onkoOkSiirto(String siirto) {
+    protected static boolean onkoOkSiirto(String siirto) {
         return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
     }
 }
